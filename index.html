@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>SISTEMAS MULTI-AGENTES</h1>
+            <h4>Danielle Werutsky, Nicole Machemer e Paula Souza</h4>
+        </div>
+        <div class="container">
+            <div class="content-container">
+                <div class="content">
+                    <h2>O QUE SÃO AGENTES INTELIGENTES?</h3>
+                    <p>
+                        Agentes são capazes de perceber um ambiente através de sensores e interagir com ele por meio de atuadores. 
+                        Um exemplo disso seria um agente humano: ele percebe o ambiente por meio dos seus olhos e interage com ele 
+                        com seus membros, ou então, um agente robótico que percebe o ambiente com câmeras e interage com motores. 
+                        O ambiente mencionado por ser o universo infinito, mas, ele costuma ser restringido.<br>
+                        <br>
+                        Chamamos o conjunto de tudo aquilo que o agente percebeu do ambiente com seus sensores de sequência de percepções e,
+                        a escolha da ação de um agente se dá por essa sequência de percepções que ele recebeu até o momento. 
+                        O mapeamento dessa sequência de percepções para uma ação se dá através de uma descrição matemática abstrata chamada de função do agente. 
+                        Mas, internamente, a função de um agente artificial é dada pelo programa do agente, que é uma implementação concreta.<br>
+                        <br>
+                        Uma das diferenças mais significantes entre agentes e programas tradicionais é a capacidade do agente de executar seus objetivos 
+                        automaticamente, sem comandos externos. Para permitir esta ação, um agente deve ter controle sobre suas ações e estar ciente de seu 
+                        próprio estado e do ambiente no qual ele opera. O nível de autonomia deve ser especificado pelo usuário ou pelo programador, 
+                        visto que pode haver casos em que o usuário não deseja que o agente tenha completa autonomia na tomada de decisão.<br>
+                        <br>
+                        Outra característica dos agentes é a capacidade de raciocínio, que permite analisar o ambiente e tomar decisões com base no mesmo. 
+                        A habilidade de aprendizado e adaptação ao ambiente aumenta a autonomia do agente. Portanto, o aprendizado é o componente mais 
+                        importante e também o mais complexo da inteligência de um agente.<br>
+                        <br>
+                        Além da autonomia e inteligência, os agentes podem possuir outras características importantes:<br>
+                        <ul>
+                            <li>
+                                <strong>Estáticos:</strong> processamento em um único computador;<br>
+                            </li>
+                            <li>
+                                <strong>Móveis:</strong> podem se mover através de uma rede de computadores;<br>
+                            </li>
+                            <li>
+                                <strong>Reativos:</strong> não possuem um modelo prévio do ambiente, por isso, agem de acordo com os estímulos fornecidos por esse ambiente;<br>
+                            </li>
+                            <li>
+                                <strong>Deliberativos:</strong> possuem um modelo do ambiente, então planejam e coordenam suas ações;<br>
+                            </li>
+                            <li>
+                                <strong>Sociáveis:</strong> habilidade de interagir com outros agentes ou usuários;<br>
+                            </li>
+                            <li>
+                                <strong>Pró-ativos:</strong> possuem iniciativa própria, não dependendo somente de estímulos do ambiente.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="content">
+                    <h2>SISTEMAS MULTI-AGENTES (SMA)</h3>
+                    <p>
+                        Um Sistema Multiagente é um sistema onde múltiplos agentes interagem entre si. Esta área da IA investiga os fenômenos 
+                        emergentes dessas interações e oferece metodologias e ferramentas para o desenvolvimento e estudo desses agentes e sistemas.<br>
+                        <br>
+                        Para entender melhor que é um sistema multi-agente, considere que você está dirigindo um carro numa cidade vazia e pretende 
+                        ir num lugar pela primeira vez, você pode traçar o melhor caminho no GPS, talvez pegando o caminho mais rápido. 
+                        Porém considere agora uma cidade com movimento e trânsito, a decisão já não a mais simples e fácil de se tomar, apesar do 
+                        objetivo continuar o mesmo, caminho mais rápido, pois tem outros fatores que vão determinar qual será a melhor rota para 
+                        seguir, como quantidade de carros nas rotas, problemas na estrada, engarrafamento, porém não conseguimos saber disso, 
+                        pois temos somente uma visão local e apenas conseguimos informações limitadas do ambiente como um todo.
+                        Como podemos observar os outros carros sem que já esteja comprometido a uma rota? Como cada motorista consegue decidir a 
+                        rota certa sem pegar engarrafamento?<br>
+                        <br>
+                        Essa é uma questão de coordenação, e é uma das tarefas para sistemas multiagentes. As tarefas de coordenação são normalmente 
+                        resolvidas de forma centralizada, na qual um agente especial tem uma visão geral do sistema e os demais agentes. 
+                        No caso seria como se cada motorista ligasse para uma central e perguntasse “Qual melhor rota para eu seguir?”, 
+                        assim conseguiria dividir melhor os carros, evitando engarrafamentos. Porém cada agente é autônomo, não necessita de 
+                        ordens externas e se recebe, não precisa segui-las, nestes casos, o sistema centralizado se ineficaz. 
+                        O que acontece se um agente falhar? Se ocorrer falha ela vira em um obstáculo, sendo crucial evitar congestionamentos 
+                        mesmo se o agente centralizador não estiver disponível.<br>
+                        <br>
+                        O robô Rover Curiosity, feito pela NASA, leva um modelo de sistema monolítico, isso é tudo que é necessário para cumprir 
+                        sua missão está contido nele, o que é um desvantagem, uma vez que acontece uma falha no robô, toda a missão falha e é 
+                        interrompida. Uma ótima alternativa para soluções para esse tipo de problema é trabalhar com sistema de multiagentes, 
+                        uma grande quantidade de pequenos robôs que podem trabalhar em conjunto.<br>
+                        <br>
+                        A vantagem de multiagentes ao invés de monolítico é justamente a chamada degradação graciosa: caso um ou alguns robôs 
+                        venham a falhar, os outros conseguem e podem continuar a missão, mesmo que de forma menos efetiva. 
+                        Isso exige que os agentes se adaptem a situação e agem de maneira com que a missão seja minimamente cumprida.<br>
+                        <br>
+                        Ambos exemplos acima, carros e robôs, mostram duas aplicações de sistema multiagentes: estudar sistemas existentes e 
+                        desenvolver soluções novas. No caso dos carros, para entender propriedades de engarrafamentos, podemos modelar o fenômeno 
+                        diretamente. A modelagem por agentes é uma alternativa que modela os carros e seus motoristas, estudando o fenômeno 
+                        emergente da interação entre eles. Já no caso dos robôs, o sistema multi-agente é usado como para desenvolver uma nova 
+                        solução, chamada de inteligência artificial distribuída. O objetivo é solucionar um problema especificando apenas as 
+                        suas partes fundamentais (agentes) e suas interações, sendo assim a ação dos multi agentes emerge inteiramente das 
+                        interações dos mesmos.<br>
+                        <br>
+                        Sistemas multi-agentes assumem várias formas e requerem a modelagem de diferentes aspectos conforme sua função ou objetivo. 
+                        Por exemplo, agentes podem se comunicar diretamente ou não, e podem participar ou não de negociações. 
+                        Eles podem ser colaborativos, competitivos ou uma combinação de ambos. Podem ser completamente idênticos ou ter 
+                        especializações e personalidades distintas. Além disso, os agentes podem ser programados para aprender ou seguir 
+                        regras estáticas e também existem diversas abordagens para modelar um agente.
+                    </p>
+                </div>
+                <div class="content">
+                    <h2>MODELOS DE COMUNICAÇÃO ENTRE AGENTES</h3>
+                    <p>
+                        Em relação aos mecanismos de comunicação, podemos identificar quatro diferentes topologias de troca de mensagens entre agentes: 
+                        a topologia de mensagens diretas, de federação, de difusão de mensagens e de quadro de avisos.<br>
+                        <ul>
+                            <li>
+                                No <strong>modelo de troca direta de mensagens</strong>, ou comunicação direta, estabelece-se uma ligação direta entre os agentes, 
+                                através de um conjunto de protocolos que permite a comunicação fim a fim. Esse tipo de comunicação exige que cada agente 
+                                envolvido tenha conhecimento da existência de seus parceiros e saiba como endereçar mensagens a eles.
+                            </li>
+                            <li>
+                                O <strong>modelo de sistemas federados</strong> é utilizado quando o número de agentes é muito grande. Nesse modelo, uma estrutura hierárquica 
+                                de agentes é estabelecida e a troca de mensagens ocorre por meio de mediadores ou facilitadores.
+                            </li>
+                            <li>
+                                A <strong>comunicação por difusão de mensagens</strong> (broadcasting) é empregada quando é necessária a comunicação com todos os agentes 
+                                do sistema, ou quando o remetente da mensagem não sabe quem é ou qual é o endereço do destinatário.
+                            </li>
+                            <li>
+                                No <strong>modelo de comunicação através de quadro de avisos</strong> (blackboard), a comunicação ocorre por meio de algum tipo de 
+                                compartilhamento de memória, utilizado como um repositório no qual os agentes obtêm informações e postam suas mensagens 
+                                para outros agentes. Geralmente, o quadro de mensagens é particionado em vários níveis de abstração, apropriados para 
+                                cada problema em particular.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
